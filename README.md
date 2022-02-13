@@ -19,6 +19,6 @@ CUDA_VISIBLE_DEVICES=0 python -m treeDRNet_multivariate --hyperopt_max_evals 1 -
 python -m evaluation --dataset ETTm2 --horizon -1 --model treeDRNet --experiment run_1
 
 
-#### the experiment frame architecture is modified from https://github.com/cchallu/n-hits
+
 
 
