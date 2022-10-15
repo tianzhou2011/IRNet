@@ -28,7 +28,7 @@ from ..models.esrnn.esrnn import ESRNN
 from ..models.nbeats.nbeats import NBEATS
 from ..models.nhits.nhits import NHITS
 from ..models.transformer.autoformer import Autoformer
-from ..models.treeDRNet.treeDRNet import TreeDRNet
+from ..models.IRNet.IRNet import IRNet
 
 # Cell
 def get_mask_dfs(Y_df, ds_in_val, ds_in_test):
@@ -411,7 +411,7 @@ def instantiate_autoformer(mc):
 
     return model
 
-def instantiate_treedrnet(mc):
+def instantiate_irnet(mc):
     mc['n_theta_hidden'] = len(mc['stack_types']) * [ [int(mc['n_hidden']), int(mc['n_hidden'])] ]
 
     if mc['max_epochs'] is not None:
@@ -419,7 +419,7 @@ def instantiate_treedrnet(mc):
     elif mc['max_steps'] is not None:
         lr_decay_step_size = int(mc['max_steps'] / mc['n_lr_decays'])
 
-    model = TreeDRNet(n_time_in=int(mc['n_time_in']),
+    model = IRNet(n_time_in=int(mc['n_time_in']),
                    n_time_out=int(mc['n_time_out']),
                    n_x=mc['n_x'],
                    n_s=mc['n_s'],
@@ -453,7 +453,7 @@ def instantiate_model(mc):
                   'esrnn': instantiate_esrnn,
                   'nhits': instantiate_nhits,
                   'autoformer': instantiate_autoformer,
-                  'treedrnet': instantiate_treedrnet,
+                  'irnet': instantiate_irnet,
                  }
     return MODEL_DICT[mc['model']](mc)
 
