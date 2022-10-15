@@ -307,7 +307,7 @@ from ...losses.numpy import (
 from ...data.tsdataset import WindowsDataset
 
 # Cell
-class TreeDRNet(pl.LightningModule):
+class IRNet(pl.LightningModule):
     def __init__(self,
                  n_time_in,
                  n_time_out,
@@ -336,7 +336,7 @@ class TreeDRNet(pl.LightningModule):
                  frequency,
                  random_seed,
                  seasonality):
-        super(TreeDRNet, self).__init__()
+        super(IRNet, self).__init__()
         """
         N-BEATS model.
 
