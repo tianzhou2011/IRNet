@@ -11,7 +11,7 @@ from src.experiments.utils import hyperopt_tunning
 
 def get_experiment_space(args):
     space= {# Architecture parameters
-            'model':'treedrnet',
+            'model':'irnet',
             'mode': 'simple',
             'n_time_in': hp.choice('n_time_in', [args.horizon_input]),
             'n_time_out': hp.choice('n_time_out', [args.horizon]),
