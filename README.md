@@ -6,7 +6,7 @@ Various deep learning models, especially some latest Transformer-based approache
 ## Long Horizon Datasets Results
 
 
-### Run TreeDRNet experiment from console
+### Run IRNet experiment from console
 
 To replicate the results of the paper, in particular to produce the forecasts for , run the following:
 
